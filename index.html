@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stop and Fight</title>
+<style>
+  html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    overflow: hidden;
+  }
+
+  body.design0 {background: linear-gradient(135deg, #2f2f2f, #000);}
+  body.design1 {background: linear-gradient(135deg, #8B0000, #000);}
+  body.design2 {background: linear-gradient(135deg, #1a1a2e, #16213e);}
+  body.design3 {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
+  body.design4 {background: linear-gradient(135deg, #232526, #414345);}
+  body.design5 {background: linear-gradient(135deg, #373b44, #4286f4);}
+  body.design6 {background: linear-gradient(135deg, #6a0572, #a9056e);}
+  body.design7 {background: linear-gradient(135deg, #4e54c8, #8f94fb);}
+  body.design8 {background: linear-gradient(135deg, #ff416c, #ff4b2b);}
+  body.design9 {background: linear-gradient(135deg, #1f4037, #99f2c8);}
+  body.design10 {background: linear-gradient(135deg, #000046, #1cb5e0);}
+  body.design11 {background: linear-gradient(135deg, #232526, #414345);}
+  body.design12 {background: linear-gradient(135deg, #56ab2f, #a8e063);}
+  body.design13 {background: linear-gradient(135deg, #283c86, #45a247);}
+  body.design14 {background: linear-gradient(135deg, #200122, #6f0000);}
+  body.design15 {background: linear-gradient(135deg, #bdc3c7, #2c3e50);}
+  body.design16 {background: linear-gradient(135deg, #00416a, #e4e5e6);}
+  body.design17 {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
+  body.design18 {background: linear-gradient(135deg, #2c3e50, #4ca1af);}
+  body.design19 {background: linear-gradient(135deg, #232526, #1c1c1c);}
+  body.design20 {background: linear-gradient(135deg, #8e0e00, #1f1c18);}
+  body.design21 {background: linear-gradient(135deg, #141e30, #243b55);}
+  body.design22 {background: linear-gradient(135deg, #1c92d2, #f2fcfe);}
+  body.design23 {background: linear-gradient(135deg, #4568dc, #b06ab3);}
+  body.design24 {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
+  body.design25 {background: linear-gradient(135deg, #1e3c72, #2a5298);}
+  body.design26 {background: linear-gradient(135deg, #333333, #dd1818);}
+  body.design27 {background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);}
+  body.design28 {background: linear-gradient(135deg, #141e30, #243b55);}
+  body.design29 {background: linear-gradient(135deg, #000000, #434343);}
+
+  #message {
+    max-width: 600px;
+    padding: 40px 30px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    user-select: text;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  }
+
+  button {
+    position: fixed;
+    bottom: 40px;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #ff4444;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background: #cc0000;
+  }
+</style>
+</head>
+<body>
+  <div id="message">Loading...</div>
+  <button onclick="closeTab()">Close Tab</button>
+
+<script>
+  const messages = [
+    {
+      text: `GET UP AND FIGHT.<br><br>35 pushups. Now.<br><br><em>"I can do all things through Christ who strengthens me." - Philippians 4:13</em>`,
+      design: 'design0'
+    },
+    {
+      text: `IT'S NOT OVER UNTIL I WIN.<br><br>Push through the pain. Dominate the fight.<br><br><em>"But thanks be to God! He gives us the victory through our Lord Jesus Christ." - 1 Corinthians 15:57</em>`,
+      design: 'design1'
+    },
+    {
+      text: `You're better than this. Get up.<br><br>35 pushups.<br><br><em>"For physical training is of some value, but godliness has value for all things." - 1 Timothy 4:8</em>`,
+      design: 'design2'
+    },
+    {
+      text: `Stop wasting time.<br><br>Pray. Lift. Fight.<br><br><em>"Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go." - Joshua 1:9</em>`,
+      design: 'design3'
+    },
+    {
+      text: `GET UP.<br><br>Every second wasted is a loss.<br><br><em>"Run in such a way as to get the prize." - 1 Corinthians 9:24</em>`,
+      design: 'design4'
+    },
+    {
+      text: `BRUTAL TRUTH: This addiction is lying to you.<br><br>Break free NOW.<br><br><em>"So if the Son sets you free, you will be free indeed." - John 8:36</em>`,
+      design: 'design5'
+    },
+    {
+      text: `35 PUSHUPS.<br><br>No excuses.<br><br><em>"Discipline yourself for the purpose of godliness." - 1 Timothy 4:7</em>`,
+      design: 'design6'
+    },
+    {
+      text: `You want freedom? You have to fight for it.<br><br>Pray hard. Work hard.<br><br><em>"Put on the full armor of God, so that you can take your stand against the devil’s schemes." - Ephesians 6:11</em>`,
+      design: 'design7'
+    },
+    {
+      text: `IT'S NOT OVER UNTIL I WIN.<br><br>Get brutal with yourself.<br><br><em>"I have fought the good fight, I have finished the race, I have kept the faith." - 2 Timothy 4:7</em>`,
+      design: 'design8'
+    },
+    {
+      text: `Stop running. Face the fight.<br><br>Pray for strength.<br><br><em>"The Lord is my strength and my shield." - Psalm 28:7</em>`,
+      design: 'design9'
+    },
+    {
+      text: `35 pushups. Now.<br><br>Prove you mean it.<br><br><em>"Do you not know that in a race all the runners run, but only one gets the prize?" - 1 Corinthians 9:24</em>`,
+      design: 'design10'
+    },
+    {
+      text: `Every time you want to quit, remember why you started.<br><br>Get up.<br><br><em>"Let us run with perseverance the race marked out for us." - Hebrews 12:1</em>`,
+      design: 'design11'
+    },
+    {
+      text: `This fight is yours.<br><br>Own it.<br><br><em>"For I am not ashamed of the gospel... it is the power of God that brings salvation." - Romans 1:16</em>`,
+      design: 'design12'
+    },
+    {
+      text: `Stop letting your weakness win.<br><br>Push through.<br><br><em>"The Lord gives strength to his people; the Lord blesses his people with peace." - Psalm 29:11</em>`,
+      design: 'design13'
+    },
+    {
+      text: `You are a warrior.<br><br>Get up and fight.<br><br><em>"Be strong and courageous. Do not be terrified; do not be discouraged." - Deuteronomy 31:6</em>`,
+      design: 'design14'
+    },
+    {
+      text: `35 pushups. Now.<br><br>No mercy.<br><br><em>"Train yourself to be godly." - 1 Timothy 4:7</em>`,
+      design: 'design15'
+    }
+  ];
+
+  function closeTab() {
+    window.close();
+  }
+
+  function showRandomMessage() {
+    const idx = Math.floor(Math.random() * messages.length);
+    const msg = messages[idx];
+    document.body.className = msg.design;
+    document.getElementById('message').innerHTML = msg.text;
+  }
+
+  showRandomMessage();
+</script>
+</body>
+</html>
